@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task-deleting-working-env.html 
+keywords: terminate, delete, working environment, remove, terminate working environment, terminate instance, delete cloud volumes ontap, delete instance, delete working environment, delete backups 
+summary: Siempre debe eliminar sistemas Cloud Volumes ONTAP de BlueXP, en lugar de hacerlo de la consola de su proveedor de cloud. Por ejemplo, si termina una instancia de Cloud Volumes ONTAP con licencia de su proveedor de cloud, no puede utilizar la clave de licencia para otra instancia. Debe eliminar el entorno de trabajo de BlueXP para liberar la licencia. 
+---
+= Eliminar un sistema Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Siempre debe eliminar sistemas Cloud Volumes ONTAP de BlueXP, en lugar de hacerlo de la consola de su proveedor de cloud. Por ejemplo, si termina una instancia de Cloud Volumes ONTAP con licencia de su proveedor de cloud, no puede utilizar la clave de licencia para otra instancia. Debe eliminar el entorno de trabajo de BlueXP para liberar la licencia.
+
+Cuando se elimina un entorno de trabajo, BlueXP finaliza las instancias de Cloud Volumes ONTAP y elimina los discos y las instantáneas.
+
+Los recursos gestionados por otros servicios, como los backups para Cloud Backup y las instancias para Cloud Data Sense y Monitoring, no se eliminan al eliminar un entorno de trabajo. Deberá eliminarlos manualmente usted mismo. Si no lo hace, continuará recibiendo cargos por estos recursos.
+
+
+NOTE: Cuando BlueXP implementa Cloud Volumes ONTAP en su proveedor de la nube, habilita la protección de terminación en las instancias. Esta opción ayuda a evitar la terminación accidental.
+
+.Pasos
+. Si habilitó Cloud Backup en el entorno de trabajo, determine si los datos de los que se ha hecho backup siguen siendo necesarios y posteriormente https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-manage-backups-ontap.html#deleting-backups["eliminar los backups, si es necesario"^].
++
+Cloud Backup es independiente de Cloud Volumes ONTAP por su diseño. Cloud Backup no elimina automáticamente las copias de seguridad cuando elimina un sistema Cloud Volumes ONTAP y actualmente no hay compatibilidad en la interfaz de usuario para eliminar las copias de seguridad una vez que el sistema se haya eliminado.
+
+. Si habilitó Cloud Data Sense en este entorno de trabajo y ningún otro entorno de trabajo utiliza este servicio, deberá eliminar la instancia del servicio.
++
+https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html#the-cloud-data-sense-instance["Obtenga más información acerca de la instancia de Cloud Data Sense"^].
+
+. Elimine el entorno de trabajo de Cloud Volumes ONTAP.
++
+.. En la página lienzo, haga doble clic en el nombre del entorno de trabajo Cloud Volumes ONTAP que desea eliminar.
+.. Haga clic en el icono de menú y, a continuación, haga clic en *Eliminar*.
++
+image:screenshot_delete_cloud_volumes_ontap.png["Captura de pantalla que muestra el menú disponible en el entorno de trabajo que contiene la acción Eliminar."]
+
+.. Escriba el nombre del entorno de trabajo y, a continuación, haga clic en *Eliminar*.
++
+La eliminación del entorno de trabajo puede tardar hasta 5 minutos.
+
+
+
+
