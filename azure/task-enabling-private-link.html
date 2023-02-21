@@ -1767,7 +1767,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-20 14:40:27 +0000">02/20/2023</time>
+    <time datetime="2023-02-21 17:12:30 +0000">02/21/2023</time>
     
   
 
@@ -1802,7 +1802,10 @@
 <h2 id="deshabilite-los-vínculos-privados-de-azure-y-utilice-extremos-de-servicio-en-su-lugar">Deshabilite los vínculos privados de Azure y utilice extremos de servicio en su lugar</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Si así lo requiere su empresa, puede cambiar un valor de BlueXP para que configure Cloud Volumes ONTAP para que use extremos de servicio en lugar de un vínculo privado de Azure. El cambio de esta configuración se aplica a los nuevos sistemas Cloud Volumes ONTAP que cree.</p>
+<p>Si así lo requiere su empresa, puede cambiar un valor de BlueXP para que configure Cloud Volumes ONTAP para que use extremos de servicio en lugar de un vínculo privado de Azure. El cambio de esta configuración se aplica a los nuevos sistemas Cloud Volumes ONTAP que cree. Solo se admiten los extremos de servicio en <a href="https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies" target="_blank" rel="noopener">"Pares de regiones de Azure"</a> Entre el conector y los Nets Cloud Volumes ONTAP.</p>
+</div>
+<div class="paragraph">
+<p>El conector debe ponerse en marcha en la misma región de Azure que los sistemas Cloud Volumes ONTAP que gestione o en <a href="https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies" target="_blank" rel="noopener">"Par de regiones de Azure"</a> Para los sistemas Cloud Volumes ONTAP.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Pasos</div>
@@ -1827,7 +1830,13 @@
 <h2 id="trabajar-con-azure-private-links">Trabajar con Azure Private Links</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>En la mayoría de los casos, no es necesario hacer nada para configurar vínculos privados de Azure con Cloud Volumes ONTAP. BlueXP gestiona los enlaces privados de Azure para usted. Pero si utiliza DNS privado de Azure, tendrá que editar un archivo de configuración. También debe estar al tanto de un requisito para la ubicación del conector en Azure.</p>
+<p>En la mayoría de los casos, no es necesario hacer nada para configurar vínculos privados de Azure con Cloud Volumes ONTAP. BlueXP gestiona los enlaces privados de Azure para usted. Pero si utiliza una zona DNS privada de Azure existente, tendrá que editar un archivo de configuración.</p>
+</div>
+<div class="sect2">
+<h3 id="requisito-para-dns-personalizado">Requisito para DNS personalizado</h3>
+<div class="paragraph">
+<p>De manera opcional, si trabaja con DNS personalizado, necesita crear un reenviador condicional a la zona DNS privada de Azure desde sus servidores DNS personalizados. Para obtener más información, consulte <a href="https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder" target="_blank" rel="noopener">"Documentación de Azure sobre el uso de un reenviador DNS"</a>.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="cómo-funcionan-las-conexiones-de-enlace-privado">Cómo funcionan las conexiones de enlace privado</h3>
@@ -1843,11 +1852,17 @@
 <div class="paragraph">
 <p><span class="image"><img src="./media/diagram_azure_private_link.png" alt="Imagen conceptual que muestra el acceso a los datos desde Cloud Volumes ONTAP a través de un extremo privado y un enlace privado a la cuenta de almacenamiento."></span></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="ubicación-del-conector-en-azure">Ubicación del conector en Azure</h3>
-<div class="paragraph">
-<p>El conector debe ponerse en marcha en la misma región de Azure que los sistemas Cloud Volumes ONTAP que gestione o en <a href="https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies" target="_blank" rel="noopener">"Par de regiones de Azure"</a> Para los sistemas Cloud Volumes ONTAP. Este requisito garantiza que se utilice una conexión de enlace privado de Azure entre Cloud Volumes ONTAP y sus cuentas de almacenamiento asociadas.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Si los sistemas Connector y Cloud Volumes ONTAP están implementados en distintos VNets, entonces debe configurar vnet peering entre el vnet donde se despliega el conector y el vnet donde se implementan los sistemas Cloud Volumes ONTAP.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1913,7 +1928,10 @@
 <p>Si activa la reversión, BlueXP detiene la acción y revierte todos los recursos que se crearon como parte de la acción.</p>
 </div>
 <div class="paragraph">
-<p>Solo es posible habilitar la reversión a través de API.</p>
+<p>Puede activar la reversión a través de la API o actualizando el archivo app.conf.</p>
+</div>
+<div class="paragraph">
+<p><strong>Active la reversión a través de la API</strong></p>
 </div>
 <div class="olist arabic">
 <div class="title">Paso</div>
@@ -1923,6 +1941,22 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{ "rollbackOnAzurePrivateLinkFailure": true }</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Activar la reversión actualizando app.conf</strong></p>
+</div>
+<div class="olist arabic">
+<div class="title">Paso</div>
+<ol class="arabic">
+<li>
+<p>Utilice la <code>PUT /occm/config</code> Llamada API con el siguiente cuerpo de la solicitud:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{ "rollbackOnAzurePrivateLinkFailure": false }</code></pre>
 </div>
 </div>
 </li>
