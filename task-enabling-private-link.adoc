@@ -30,7 +30,9 @@ Con cualquiera de las configuraciones, BlueXP limita siempre el acceso a la red 
 
 == Deshabilite los vínculos privados de Azure y utilice extremos de servicio en su lugar
 
-Si así lo requiere su empresa, puede cambiar un valor de BlueXP para que configure Cloud Volumes ONTAP para que use extremos de servicio en lugar de un vínculo privado de Azure. El cambio de esta configuración se aplica a los nuevos sistemas Cloud Volumes ONTAP que cree.
+Si así lo requiere su empresa, puede cambiar un valor de BlueXP para que configure Cloud Volumes ONTAP para que use extremos de servicio en lugar de un vínculo privado de Azure. El cambio de esta configuración se aplica a los nuevos sistemas Cloud Volumes ONTAP que cree. Solo se admiten los extremos de servicio en link:https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Pares de regiones de Azure"^] Entre el conector y los Nets Cloud Volumes ONTAP.
+
+El conector debe ponerse en marcha en la misma región de Azure que los sistemas Cloud Volumes ONTAP que gestione o en https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Par de regiones de Azure"^] Para los sistemas Cloud Volumes ONTAP.
 
 .Pasos
 . En la parte superior derecha de la consola de BlueXP, haga clic en el icono Configuración y seleccione *Configuración del conector*.
@@ -43,7 +45,13 @@ Si así lo requiere su empresa, puede cambiar un valor de BlueXP para que config
 
 == Trabajar con Azure Private Links
 
-En la mayoría de los casos, no es necesario hacer nada para configurar vínculos privados de Azure con Cloud Volumes ONTAP. BlueXP gestiona los enlaces privados de Azure para usted. Pero si utiliza DNS privado de Azure, tendrá que editar un archivo de configuración. También debe estar al tanto de un requisito para la ubicación del conector en Azure.
+En la mayoría de los casos, no es necesario hacer nada para configurar vínculos privados de Azure con Cloud Volumes ONTAP. BlueXP gestiona los enlaces privados de Azure para usted. Pero si utiliza una zona DNS privada de Azure existente, tendrá que editar un archivo de configuración.
+
+
+
+=== Requisito para DNS personalizado
+
+De manera opcional, si trabaja con DNS personalizado, necesita crear un reenviador condicional a la zona DNS privada de Azure desde sus servidores DNS personalizados. Para obtener más información, consulte link:https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder["Documentación de Azure sobre el uso de un reenviador DNS"^].
 
 
 
@@ -58,10 +66,7 @@ A continuación se muestra un ejemplo que muestra el acceso de cliente a través
 image:diagram_azure_private_link.png["Imagen conceptual que muestra el acceso a los datos desde Cloud Volumes ONTAP a través de un extremo privado y un enlace privado a la cuenta de almacenamiento."]
 
 
-
-=== Ubicación del conector en Azure
-
-El conector debe ponerse en marcha en la misma región de Azure que los sistemas Cloud Volumes ONTAP que gestione o en https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Par de regiones de Azure"^] Para los sistemas Cloud Volumes ONTAP. Este requisito garantiza que se utilice una conexión de enlace privado de Azure entre Cloud Volumes ONTAP y sus cuentas de almacenamiento asociadas.
+NOTE: Si los sistemas Connector y Cloud Volumes ONTAP están implementados en distintos VNets, entonces debe configurar vnet peering entre el vnet donde se despliega el conector y el vnet donde se implementan los sistemas Cloud Volumes ONTAP.
 
 
 
@@ -111,7 +116,9 @@ Puede cambiar este comportamiento predeterminado habilitando la reversión si Bl
 
 Si activa la reversión, BlueXP detiene la acción y revierte todos los recursos que se crearon como parte de la acción.
 
-Solo es posible habilitar la reversión a través de API.
+Puede activar la reversión a través de la API o actualizando el archivo app.conf.
+
+*Active la reversión a través de la API*
 
 .Paso
 . Utilice la `PUT /occm/config` Llamada API con el siguiente cuerpo de la solicitud:
@@ -119,5 +126,16 @@ Solo es posible habilitar la reversión a través de API.
 [source, json]
 ----
 { "rollbackOnAzurePrivateLinkFailure": true }
+----
+
+
+*Activar la reversión actualizando app.conf*
+
+.Paso
+. Utilice la `PUT /occm/config` Llamada API con el siguiente cuerpo de la solicitud:
++
+[source, json]
+----
+{ "rollbackOnAzurePrivateLinkFailure": false }
 ----
 
