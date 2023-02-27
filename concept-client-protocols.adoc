@@ -42,7 +42,7 @@ SMB es el protocolo tradicional de acceso a archivos para sistemas Windows. Los 
 
 Cloud Volumes ONTAP es compatible con S3 como opción del almacenamiento de escalado horizontal. La compatibilidad con el protocolo S3 le permite configurar el acceso de clientes S3 a los objetos contenidos en un bloque de una máquina virtual de almacenamiento (SVM).
 
-https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["Aprenda a configurar y gestionar los servicios de almacenamiento de objetos S3 en ONTAP"^].
+link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html#how-s3-multiprotocol-works["Descubra cómo funciona el protocolo de S3"^].link:https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["Aprenda a configurar y gestionar los servicios de almacenamiento de objetos S3 en ONTAP"^].
 
 
 
