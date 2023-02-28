@@ -1773,7 +1773,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-20 14:40:27 +0000">02/20/2023</time>
+    <time datetime="2023-02-28 17:16:51 +0000">02/28/2023</time>
     
   
 
@@ -2056,7 +2056,7 @@ BlueXP mueve el volumen a un agregado existente que usa el tipo de disco selecci
 <div class="ulist">
 <ul>
 <li>
-<p>Para configurar los Servicios de dominio de Azure AD como servidor AD para Cloud Volumes ONTAP, introduzca <strong>OU=ADDC Computers</strong> o <strong>OU=usuarios ADDC</strong> en este campo.https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Documentación de Azure: Cree una unidad organizativa (OU) en un dominio gestionado de Azure AD Domain Services"^]</p>
+<p>Para configurar los Servicios de dominio de Azure AD como servidor AD para Cloud Volumes ONTAP, introduzca <strong>OU=ADDC Computers</strong> o <strong>OU=usuarios ADDC</strong> en este campo.<a href="https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou" target="_blank" rel="noopener">"Documentación de Azure: Cree una unidad organizativa (OU) en un dominio gestionado de Azure AD Domain Services"</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -2117,7 +2117,7 @@ BlueXP mueve el volumen a un agregado existente que usa el tipo de disco selecci
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Sugerencia">
 </td>
 <td class="content">
-BlueXP muestra los mensajes necesarios de esta acción cuando un agregado ha alcanzado el 90% de la capacidad utilizada. Si la organización en niveles de datos está habilitada, los mensajes se muestran cuando un agregado ha alcanzado el 80 % de la capacidad utilizada. De forma predeterminada, se reserva el 10 % del espacio libre para la organización en niveles de los datos. <a href="task-tiering.html#changing-the-free-space-ratio-for-data-tiering">"Más información acerca de la relación de espacio libre para la organización en niveles de datos"</a>.
+BlueXP muestra los mensajes necesarios de esta acción cuando un agregado ha alcanzado el 90% de la capacidad utilizada. Si la organización en niveles de datos está habilitada, los mensajes se muestran cuando un agregado ha alcanzado el 80 % de la capacidad utilizada. De forma predeterminada, se reserva el 10 % del espacio libre para la organización en niveles de los datos. <a href="task-tiering.html#changing-the-free-space-ratio-for-data-tiering" target="_blank" rel="noopener">"Más información acerca de la relación de espacio libre para la organización en niveles de datos"</a>.
 </td>
 </tr>
 </table>
@@ -2126,17 +2126,17 @@ BlueXP muestra los mensajes necesarios de esta acción cuando un agregado ha alc
 <div class="title">Pasos</div>
 <ol class="arabic">
 <li>
-<p><a href="#identificar-cómo-se-corrigen-los-problemas-de-capacidad">Identificar cómo se corrige el problema</a>.</p>
+<p><a href="#identificar-cómo-se-corrigen-los-problemas-de-capacidad">Identificar cómo se corrigen los problemas de capacidad</a>.</p>
 </li>
 <li>
 <p>Según su análisis, mueva volúmenes para evitar problemas de capacidad:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#mueva-volúmenes-a-otro-sistema-para-evitar-problemas-de-capacidad">Mueva volúmenes a otro sistema</a>.</p>
+<p><a href="#mueva-volúmenes-a-otro-sistema-para-evitar-problemas-de-capacidad">Mueva volúmenes a otro sistema para evitar problemas de capacidad</a>.</p>
 </li>
 <li>
-<p><a href="#mueva-volúmenes-a-otro-agregado-para-evitar-problemas-de-capacidad">Mueva volúmenes a otro agregado del mismo sistema</a>.</p>
+<p><a href="#mueva-volúmenes-a-otro-agregado-para-evitar-problemas-de-capacidad">Mueva volúmenes a otro agregado para evitar problemas de capacidad</a>.</p>
 </li>
 </ul>
 </div>
@@ -2222,20 +2222,25 @@ BlueXP muestra los mensajes necesarios de esta acción cuando un agregado ha alc
 <div class="title">Acerca de esta tarea</div>
 <p>Puede seguir los pasos de esta tarea para corregir el siguiente mensaje Acción necesaria:</p>
 </div>
-<div class="literalblock">
+<div class="exampleblock">
 <div class="content">
-<pre> Moving a volume is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you because the system has reached the disk limit.
-.Pasos
-. Identifique un sistema Cloud Volumes ONTAP con capacidad disponible o implemente un nuevo sistema.
-. Arrastre y suelte el entorno de trabajo de origen en el entorno de trabajo de destino para realizar una replicación de datos única del volumen.</pre>
-</div>
-</div>
 <div class="paragraph">
-<p>+<br>
-Para obtener más información, consulte <a href="https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html" target="_blank" rel="noopener">"Replicación de datos entre sistemas"</a>.</p>
+<p>Mover un volumen es necesario para evitar problemas de capacidad; sin embargo, BlueXP no puede realizar esta acción porque el sistema ha alcanzado el límite de discos.</p>
+</div>
+</div>
 </div>
 <div class="olist arabic">
+<div class="title">Pasos</div>
 <ol class="arabic">
+<li>
+<p>Identifique un sistema Cloud Volumes ONTAP con capacidad disponible o implemente un nuevo sistema.</p>
+</li>
+<li>
+<p>Arrastre y suelte el entorno de trabajo de origen en el entorno de trabajo de destino para realizar una replicación de datos única del volumen.</p>
+<div class="paragraph">
+<p>Para obtener más información, consulte <a href="https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html" target="_blank" rel="noopener">"Replicación de datos entre sistemas"</a>.</p>
+</div>
+</li>
 <li>
 <p>Vaya a la página Replication Status y, a continuación, rompa la relación de SnapMirror para convertir el volumen replicado de un volumen de protección de datos a un volumen de lectura/escritura.</p>
 <div class="paragraph">
@@ -2266,24 +2271,32 @@ Para obtener más información, consulte <a href="https://docs.netapp.com/us-en/
 <div class="title">Acerca de esta tarea</div>
 <p>Puede seguir los pasos de esta tarea para corregir el siguiente mensaje Acción necesaria:</p>
 </div>
-<div class="literalblock">
+<div class="exampleblock">
 <div class="content">
-<pre> Moving two or more volumes is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you.
-.Pasos
-. Compruebe si un agregado existente tiene capacidad disponible para los volúmenes que se necesitan mover:</pre>
-</div>
-</div>
 <div class="paragraph">
-<p>+<br>
-.. En el entorno de trabajo, haga clic en el icono de menú y, a continuación, haga clic en <strong>Avanzado &gt; asignación avanzada</strong>.<br>
-.. Seleccione cada agregado, haga clic en <strong>Info</strong> y, a continuación, vea la capacidad disponible (capacidad agregada menos capacidad agregada utilizada).</p>
+<p>Es necesario mover dos o más volúmenes para evitar problemas de capacidad; sin embargo, BlueXP no puede realizar esta acción por usted.</p>
 </div>
-<div class="paragraph">
-<p>+<br>
-<span class="image"><img src="./media/screenshot_aggr_capacity.gif" alt="Captura de pantalla: Muestra la capacidad total del agregado y la capacidad utilizada de agregado disponible en el cuadro de diálogo de información de agregado."></span></p>
+</div>
 </div>
 <div class="olist arabic">
+<div class="title">Pasos</div>
 <ol class="arabic">
+<li>
+<p>Compruebe si un agregado existente tiene capacidad disponible para los volúmenes que se necesitan mover:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>En el entorno de trabajo, haga clic en el icono de menú y, a continuación, haga clic en <strong>Avanzado &gt; asignación avanzada</strong>.</p>
+</li>
+<li>
+<p>Seleccione cada agregado, haga clic en <strong>Info</strong> y, a continuación, vea la capacidad disponible (capacidad agregada menos capacidad agregada utilizada).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_aggr_capacity.gif" alt="Captura de pantalla: Muestra la capacidad total del agregado y la capacidad utilizada de agregado disponible en el cuadro de diálogo de información de agregado."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
 <li>
 <p>Si es necesario, añada discos a un agregado existente:</p>
 <div class="olist loweralpha">
