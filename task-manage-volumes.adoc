@@ -120,7 +120,7 @@ NOTE: BlueXP mueve el volumen a un agregado existente que usa el tipo de disco s
 
 De forma predeterminada, un volumen crece automáticamente a un tamaño máximo cuando no hay espacio. El valor predeterminado es 1,000, lo que significa que el volumen puede crecer hasta 11 veces su tamaño. Este valor se puede configurar en los ajustes de un conector.
 
-Si necesita cambiar el tamaño de su volumen, puede hacerlo mediante https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html["System Manager de ONTAP"^]. Asegúrese de tener en cuenta los límites de capacidad de su sistema mientras cambia el tamaño de los volúmenes. Vaya a la https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Notas de la versión de Cloud Volumes ONTAP"^] para obtener más detalles.
+Si necesita cambiar el tamaño de su volumen, puede hacerlo mediante link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html["System Manager de ONTAP"^]. Asegúrese de tener en cuenta los límites de capacidad de su sistema mientras cambia el tamaño de los volúmenes. Vaya a la https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Notas de la versión de Cloud Volumes ONTAP"^] para obtener más detalles.
 
 
 
@@ -161,14 +161,14 @@ endif::aws[]
 
 ifdef::azure[]
 
-** Para configurar los Servicios de dominio de Azure AD como servidor AD para Cloud Volumes ONTAP, introduzca *OU=ADDC Computers* o *OU=usuarios ADDC* en este campo.https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Documentación de Azure: Cree una unidad organizativa (OU) en un dominio gestionado de Azure AD Domain Services"^]
+** Para configurar los Servicios de dominio de Azure AD como servidor AD para Cloud Volumes ONTAP, introduzca *OU=ADDC Computers* o *OU=usuarios ADDC* en este campo.link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Documentación de Azure: Cree una unidad organizativa (OU) en un dominio gestionado de Azure AD Domain Services"^]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-** Para configurar Google Managed Microsoft AD como servidor AD para Cloud Volumes ONTAP, introduzca *OU=equipos,OU=Cloud* en este campo.https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Documentación de Google Cloud: Unidades organizativas de Google Managed Microsoft AD"^]
+** Para configurar Google Managed Microsoft AD como servidor AD para Cloud Volumes ONTAP, introduzca *OU=equipos,OU=Cloud* en este campo.link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Documentación de Google Cloud: Unidades organizativas de Google Managed Microsoft AD"^]
 
 
 endif::gcp[]
@@ -197,7 +197,7 @@ Puede mover un volumen en System Manager seleccionando un volumen y el agregado 
 En la mayoría de las situaciones, se puede usar System Manager para mover volúmenes.
 
 +
-Para ver instrucciones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html["Guía exprés de traslado de volúmenes de ONTAP 9"^].
+Para ver instrucciones, consulte link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html["Guía exprés de traslado de volúmenes de ONTAP 9"^].
 
 
 
@@ -208,14 +208,14 @@ Para ver instrucciones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp
 BlueXP puede mostrar un mensaje Action Required que indica que mover un volumen es necesario para evitar problemas de capacidad, pero que debe corregir el problema por sí mismo. Si sucede esto, debe identificar cómo corregir el problema y luego mover uno o más volúmenes.
 
 
-TIP: BlueXP muestra los mensajes necesarios de esta acción cuando un agregado ha alcanzado el 90% de la capacidad utilizada. Si la organización en niveles de datos está habilitada, los mensajes se muestran cuando un agregado ha alcanzado el 80 % de la capacidad utilizada. De forma predeterminada, se reserva el 10 % del espacio libre para la organización en niveles de los datos. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering["Más información acerca de la relación de espacio libre para la organización en niveles de datos"].
+TIP: BlueXP muestra los mensajes necesarios de esta acción cuando un agregado ha alcanzado el 90% de la capacidad utilizada. Si la organización en niveles de datos está habilitada, los mensajes se muestran cuando un agregado ha alcanzado el 80 % de la capacidad utilizada. De forma predeterminada, se reserva el 10 % del espacio libre para la organización en niveles de los datos. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering["Más información acerca de la relación de espacio libre para la organización en niveles de datos"^].
 
 .Pasos
-. <<Identificar cómo se corrigen los problemas de capacidad,Identificar cómo se corrige el problema>>.
+. <<Identificar cómo se corrigen los problemas de capacidad>>.
 . Según su análisis, mueva volúmenes para evitar problemas de capacidad:
 +
-** <<Mueva volúmenes a otro sistema para evitar problemas de capacidad,Mueva volúmenes a otro sistema>>.
-** <<Mueva volúmenes a otro agregado para evitar problemas de capacidad,Mueva volúmenes a otro agregado del mismo sistema>>.
+** <<Mueva volúmenes a otro sistema para evitar problemas de capacidad>>.
+** <<Mueva volúmenes a otro agregado para evitar problemas de capacidad>>.
 
 
 
@@ -273,20 +273,24 @@ Es posible mover uno o más volúmenes a otro sistema Cloud Volumes ONTAP para e
 .Acerca de esta tarea
 Puede seguir los pasos de esta tarea para corregir el siguiente mensaje Acción necesaria:
 
- Moving a volume is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you because the system has reached the disk limit.
+[]
+====
+Mover un volumen es necesario para evitar problemas de capacidad; sin embargo, BlueXP no puede realizar esta acción porque el sistema ha alcanzado el límite de discos.
+
+====
 .Pasos
 . Identifique un sistema Cloud Volumes ONTAP con capacidad disponible o implemente un nuevo sistema.
 . Arrastre y suelte el entorno de trabajo de origen en el entorno de trabajo de destino para realizar una replicación de datos única del volumen.
 +
-Para obtener más información, consulte https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["Replicación de datos entre sistemas"^].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["Replicación de datos entre sistemas"^].
 
 . Vaya a la página Replication Status y, a continuación, rompa la relación de SnapMirror para convertir el volumen replicado de un volumen de protección de datos a un volumen de lectura/escritura.
 +
-Para obtener más información, consulte https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships["Gestionar programaciones y relaciones de replicación de datos"^].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships["Gestionar programaciones y relaciones de replicación de datos"^].
 
 . Configure el volumen para el acceso a los datos.
 +
-Para obtener información sobre la configuración de un volumen de destino para el acceso a los datos, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html["Guía exprés de recuperación de desastres de volúmenes de ONTAP 9"^].
+Para obtener información sobre la configuración de un volumen de destino para el acceso a los datos, consulte link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html["Guía exprés de recuperación de desastres de volúmenes de ONTAP 9"^].
 
 . Elimine el volumen original.
 +
@@ -303,7 +307,11 @@ Puede mover uno o varios volúmenes a otro agregado para evitar problemas de cap
 .Acerca de esta tarea
 Puede seguir los pasos de esta tarea para corregir el siguiente mensaje Acción necesaria:
 
- Moving two or more volumes is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you.
+[]
+====
+Es necesario mover dos o más volúmenes para evitar problemas de capacidad; sin embargo, BlueXP no puede realizar esta acción por usted.
+
+====
 .Pasos
 . Compruebe si un agregado existente tiene capacidad disponible para los volúmenes que se necesitan mover:
 +
@@ -327,7 +335,7 @@ Para obtener más información, consulte link:task-create-aggregates.html["Creac
 . Utilice System Manager o la interfaz de línea de comandos para mover los volúmenes al agregado.
 . En la mayoría de las situaciones, se puede usar System Manager para mover volúmenes.
 +
-Para ver instrucciones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html["Guía exprés de traslado de volúmenes de ONTAP 9"^].
+Para ver instrucciones, consulte link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html["Guía exprés de traslado de volúmenes de ONTAP 9"^].
 
 
 
