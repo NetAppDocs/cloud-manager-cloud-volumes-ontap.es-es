@@ -8,16 +8,16 @@
     <description>The latest updates from NetApp Documentation</description>
     <language>es-es</language>
     <ttl>60</ttl>
-    <pubDate>Tue, 28 Feb 2023 17:19:20 +0000</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2023 17:19:20 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2023 21:37:25 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2023 21:37:25 +0000</lastBuildDate>
     
     
     
     <item>
-      <title>Lo nuevo (20 Feb 2023)</title>
-      <pubDate>Mon, 20 Feb 2023 14:40:27 +0000</pubDate>
-      <link>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/whats-new.html?time=1676904027</link>
-      <guid isPermaLink="false">Mon, 20 Feb 2023 14:40:27 +0000</guid>
+      <title>Lo nuevo (6 Mar 2023)</title>
+      <pubDate>Mon, 06 Mar 2023 21:35:17 +0000</pubDate>
+      <link>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/whats-new.html?time=1678138517</link>
+      <guid isPermaLink="false">Mon, 06 Mar 2023 21:35:17 +0000</guid>
       <description><![CDATA[ Descubra las novedades de la gestión de Cloud Volumes ONTAP en BlueXP (anteriormente Cloud Manager). ]]></description>
     </item>
     

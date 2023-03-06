@@ -62,6 +62,20 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/concept-gcp-image-verification.html</loc>
+      
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/concept-gcp-verify-signed-image.html</loc>
+      
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/concept-ha-azure.html</loc>
       
       <lastmod>2023-02-20T14:40:27+00:00</lastmod>
@@ -141,7 +155,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/concept-write-speed.html</loc>
       
-      <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -169,7 +183,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/reference-default-configs.html</loc>
       
-      <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -211,7 +225,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/reference-versions.html</loc>
       
-      <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -225,7 +239,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2023-02-28T17:17:06+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:29+00:00</lastmod>
       
     </url>
   
@@ -365,7 +379,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html</loc>
       
-      <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -398,9 +412,16 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-gcp-convert-image-raw.html</loc>
+      
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-get-help.html</loc>
       
-      <lastmod>2023-02-27T21:01:47+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -435,7 +456,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html</loc>
       
-      <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -645,7 +666,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-support-registration.html</loc>
       
-      <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -666,7 +687,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html</loc>
       
-      <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -674,6 +695,13 @@
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html</loc>
       
       <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-verify-openssl-gcp.html</loc>
+      
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
@@ -687,7 +715,7 @@
     <url>
       <loc>https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/whats-new.html</loc>
       
-      <lastmod>2023-02-20T14:40:27+00:00</lastmod>
+      <lastmod>2023-03-06T21:35:17+00:00</lastmod>
       
     </url>
   
