@@ -96,7 +96,7 @@ ifdef::gcp[]
 
 Si utiliza un sistema de un solo nodo, Cloud Volumes ONTAP admite una alta velocidad de escritura con todos los tipos de máquinas.
 
-Cloud Volumes ONTAP no admite alta velocidad de escritura con pares de alta disponibilidad en Google Cloud.
+Si utiliza una pareja de alta disponibilidad, Cloud Volumes ONTAP admite una alta velocidad de escritura con varios tipos de máquinas virtuales, a partir de la versión 9.13.0. Vaya a la https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#supported-configurations-by-license["Notas de la versión de Cloud Volumes ONTAP"^] Para ver los tipos de equipos virtuales que admiten una alta velocidad de escritura.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Obtenga más información acerca de los tipos de máquina compatibles con Cloud Volumes ONTAP"^].
 

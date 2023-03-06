@@ -30,6 +30,7 @@ A partir de la versión BlueXP 3.9.5, la generación de informes de espacio lóg
 ** FlexCache
 ** FlexClone
 ** ISCSI
+** Administración de claves de cifrado multi-tenant (MTEKM), a partir de Cloud Volumes ONTAP 9.12.1 GA
 ** Cifrado de volúmenes de NetApp (solo para sistemas BYOL o registrados de PAYGO)
 ** NFS
 

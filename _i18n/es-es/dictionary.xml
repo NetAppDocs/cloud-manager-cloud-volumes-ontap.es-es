@@ -2368,7 +2368,6 @@
   <block id="89347e425902e735637e8fa0c5aaea49" category="paragraph">Si utiliza un sistema de un solo nodo, Cloud Volumes ONTAP admite una alta velocidad de escritura con todos los tipos de máquinas virtuales.</block>
   <block id="19efe5a9cd2387e8587c05321062a095" category="paragraph">Si utiliza una pareja de alta disponibilidad, Cloud Volumes ONTAP admite una alta velocidad de escritura con varios tipos de máquinas virtuales, a partir de la versión 9.8. Vaya a la<block ref="2c91cb4d7bbd40d1a3efe8602ebb4273" category="inline-link-rx"></block> Para ver los tipos de equipos virtuales que admiten una alta velocidad de escritura.</block>
   <block id="543bcb76d6487a8515a8a34178160fca" category="paragraph">Si utiliza un sistema de un solo nodo, Cloud Volumes ONTAP admite una alta velocidad de escritura con todos los tipos de máquinas.</block>
-  <block id="a5feb10e04fddec4318f091f70667b36" category="paragraph">Cloud Volumes ONTAP no admite alta velocidad de escritura con pares de alta disponibilidad en Google Cloud.</block>
   <block id="e4e959caff2c6b1635b2a3bea64b35f7" category="inline-link">Obtenga más información acerca de los tipos de máquina compatibles con Cloud Volumes ONTAP</block>
   <block id="f3e658b45576241d792ccaccc236fc48" category="paragraph"><block ref="a8ee7ccc97f8f155aa3297d287b2257a" category="inline-link-rx"></block>.</block>
   <block id="5859fb81f0cd1fbd6824d86c16923404" category="section-title">Cómo seleccionar una velocidad de escritura</block>
@@ -4108,10 +4107,7 @@
   <block id="19d089db572ee6a1e154a0c9c9e57bfd" category="paragraph">NetApp utiliza Microsoft Azure Active Directory como proveedor de identidades para servicios de autenticación específicos para soporte y licencias.</block>
   <block id="465ec6d5eafa3524c948c99d8bfcd306" category="list-text">En la página de inicio de sesión, proporcione su dirección de correo electrónico registrada en el sitio de soporte de NetApp y contraseña para realizar el proceso de autenticación.</block>
   <block id="cbc6cc3bb022583403171b447b2a962c" category="paragraph">Estas acciones permiten a BlueXP utilizar su cuenta NSS para cosas como descargas de licencias, verificación de actualizaciones de software y futuros registros de soporte.</block>
-  <block id="0f0a0d646a020cf3a65ce82ada4cfb01" category="list-text">La cuenta debe ser una cuenta de nivel de cliente (no una cuenta de invitado o temporal).</block>
   <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">Icono de tres puntos horizontales</block>
-  <block id="ff67299785d475e87002751aa6ab5eb8" category="list-text">Después de iniciar sesión correctamente, NetApp almacenará el nombre de usuario de NSS. Se trata de un ID generado por el sistema que se asigna a su correo electrónico. En la página *NSS Management*, puede mostrar su correo electrónico desde <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> de windows</block>
-  <block id="505da61efe6bebebbaf092da18f64613" category="list-text">Si alguna vez necesita actualizar sus tokens de credenciales de inicio de sesión, también hay una opción *Actualizar credenciales* en la <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> de windows Con esta opción se le solicita que vuelva a iniciar sesión.</block>
   <block id="ad56c7289bc13dcf4f78c285f7f03878" category="section-title">Regístrese en NetApp</block>
   <block id="f1bac79c2c71fbd93863b9fbd718094c" category="paragraph">La forma de registrarse para recibir soporte de NetApp depende de si ya tiene una cuenta del sitio de soporte de NetApp (NSS).</block>
   <block id="bf4c731c0ee7f60c8018ad8f96828dda" category="section-title">Cliente existente con una cuenta de NSS</block>
@@ -4645,4 +4641,123 @@
   <block id="35b10bba4deebd11fc4a8516d588a2f7" category="paragraph">Para obtener más información, consulte <block ref="99d9b6ae46b04038337785859273721b" category="inline-link-macro-rx"></block>.</block>
   <block id="5f377380cbcdf7966d890bdb7ff0faa5" category="paragraph">Para obtener información sobre la configuración de un volumen de destino para el acceso a los datos, consulte <block ref="194d6a4dc62fd84f1ce4e3d372f4afab" category="inline-link-macro-rx"></block>.</block>
   <block id="38e756f76c74b5075bf08a75f76e4554" category="paragraph">Es necesario mover dos o más volúmenes para evitar problemas de capacidad; sin embargo, BlueXP no puede realizar esta acción por usted.</block>
+  <block id="1ee6f28ca24808cbfb56feaccf1c3e53" category="summary">Convierta una imagen exportada a formato disk.RAW a través de la línea de comandos de Google Cloud.</block>
+  <block id="4924fff9a6684704aac6ccb1ed5fd97d" category="doc">Convierta la imagen al formato sin formato en Google Cloud</block>
+  <block id="e42cb7ec1fc839883e3e4e1864b30d87" category="inline-link">El sitio de soporte de NetApp (NSS)</block>
+  <block id="ac16be4e1060792bdf37f35e6cc518f9" category="paragraph">La imagen que se utilizará para implementar nuevas instancias, actualizaciones o utilizarse en imágenes existentes se compartirá con los clientes a través de<block ref="c1c4e3e8a814891940b982f96af89878" category="inline-link-rx"></block>. El resumen firmado y los certificados se podrán descargar a través del portal de NSS. Asegúrese de descargar el resumen y los certificados de la versión correcta que corresponde a la imagen compartida por el soporte de NetApp. Por ejemplo, 9.13.0 imágenes tendrán un resumen firmado de 9.13.0 y certificados disponibles en NSS.</block>
+  <block id="7a8f498eae5977019b0d0c0d3ef013c0" category="section-title">¿Por qué es necesario este paso?</block>
+  <block id="6bb0851f205415d62274497842e3218a" category="paragraph">Las imágenes de Google Cloud no se pueden descargar directamente. Para verificar la imagen frente al resumen firmado y los certificados, es necesario contar con un mecanismo para comparar los dos archivos y descargar la imagen. Para ello, debe exportar o convertir la imagen en un formato disk.raw y guardar los resultados en un bloque de almacenamiento en Google Cloud. El archivo disk.raw es tarred y gzip en el proceso.</block>
+  <block id="639031c91c1718355b2c49de79b7c8a9" category="paragraph">El usuario/cuenta de servicio necesitará privilegios para realizar lo siguiente:</block>
+  <block id="8510b9d49ae3af28080e9ab3c769e316" category="list-text">Acceso a bucket de almacenamiento de Google</block>
+  <block id="6b3a8711b7b0a7f0ca17594f3cb27910" category="list-text">Escribir en Google Storage bucket</block>
+  <block id="bb08d6d5fcb1c5c4e9257dd97f8657e8" category="list-text">Creación de trabajos de creación de cloud (que se usan durante el proceso de exportación)</block>
+  <block id="0211c2e7a1f1b9cd2d2ff37f63d0cbfe" category="list-text">Acceso a la imagen deseada</block>
+  <block id="74a5f984dcb642bac9c5327e39e6df05" category="list-text">Cree tareas de exportación de imágenes</block>
+  <block id="65f7614896abb27a91631087b7310da5" category="paragraph">Para verificar la imagen, debe convertirse a un formato disk.RAW y, a continuación, descargarse.</block>
+  <block id="10868e2d56662b4588b6d2397d92a859" category="section-title">Utilice la línea de comandos de Google Cloud para exportar imagen de Google Cloud</block>
+  <block id="af61c0c1ee8de516a01c6e171f19abeb" category="inline-link">comando de exportación de imágenes de computación gcloud</block>
+  <block id="1dd36b5da1220777ad9e1ab31632d911" category="paragraph">La forma preferida de exportar una imagen al almacenamiento en cloud es utilizar la<block ref="a4c66ff2f3c53397780a048fb09314b7" category="inline-link-rx"></block>. Este comando toma la imagen proporcionada y la convierte en un archivo disk.raw que se consigue tarred y gzip. El archivo generado se guarda en la URL de destino y puede descargarse para su verificación.</block>
+  <block id="26b2216a4240ad7d761b87056bdd08d6" category="paragraph">El usuario/cuenta debe tener privilegios para acceder y escribir en el bloque deseado, exportar la imagen y crear la nube (utilizados por Google para exportar la imagen) para ejecutar esta operación.</block>
+  <block id="d5d1915ba486e63c35a1f3a88839e1b0" category="paragraph">*Exportar imagen de Google Cloud mediante gcloud*</block>
+  <block id="d2816514636c054ad7c6ba2f7c056434" category="example-title">Haga clic en para mostrar el script</block>
+  <block id="b9231f744254be27be6f8180edb2c230" category="paragraph">*Extraer archivos comprimidos*</block>
+  <block id="7687a452778371a352ce867b57724b93" category="inline-link">Documento de Google Cloud sobre la exportación de una imagen</block>
+  <block id="c32a24baf89135bb87bdf6dbe099b487" category="admonition">Consulte<block ref="c7e947f0888e30efd1d729c87ccc8502" category="inline-link-rx"></block> Para obtener más información sobre cómo exportar una imagen a través de Google Cloud.</block>
+  <block id="e6b411af64f8108d8230e8dc4d5ed17e" category="cell">9.13.0</block>
+  <block id="01277cd6d5e8d9a803f07b849cedae4b" category="summary">Verifique los archivos de firmas de archivos de imagen de Google Cloud.</block>
+  <block id="5567cef37155e1157348c6775226af57" category="doc">Información general de verificación de imágenes de Google Cloud</block>
+  <block id="248cdc66c441a6612309f6e2ce80a63c" category="inline-link">NSS</block>
+  <block id="1c6fb094d8ad58a6db78e6b557985243" category="paragraph">La verificación de imágenes de Google Cloud cumple con los requisitos de seguridad mejorados de NetApp. Se han realizado cambios en la secuencia de comandos que generan las imágenes para firmar la imagen en la forma en que se utilizan claves privadas generadas específicamente para esta tarea. Puede verificar la integridad de la imagen de GCP utilizando el resumen firmado y el certificado público de Google Cloud, que se puede descargar a través de<block ref="4af4717946461f54169780875a3b5a98" category="inline-link-rx"></block> para una versión específica.</block>
+  <block id="5745e537e1e3a11e00e50f67820a46a1" category="admonition">La verificación de Google Cloud Image es compatible con la versión 9.13.0 o posterior del software Cloud Volumes ONTAP.</block>
+  <block id="898e35e1a4bf4b025c3edec879439b08" category="section-title">Gestione sus casos de soporte (vista previa)</block>
+  <block id="8b74b053fbeeff5c3b6f4991cb1d028d" category="paragraph">Puede ver y gestionar los casos de soporte activos y resueltos directamente desde BlueXP. Es posible gestionar los casos asociados con su cuenta de NSS y con su empresa.</block>
+  <block id="394ef093ad3259b9ff0fe7406f015b83" category="paragraph">La gestión de casos está disponible como vista previa. Tenemos pensado perfeccionar esta experiencia y añadir mejoras en próximos lanzamientos. Envíenos sus comentarios mediante el chat en el producto.</block>
+  <block id="5e4e7672ec2ba2b8a763da7f6714e212" category="list-text">La consola de gestión de casos en la parte superior de la página ofrece dos vistas:</block>
+  <block id="01c3ffea552d74a5ae390b10e71a1f26" category="list-text">La vista de la izquierda muestra el total de casos abiertos en los últimos 3 meses por la cuenta de usuario NSS que ha proporcionado.</block>
+  <block id="e3b6c09a5686233f72ce1ea60a1eb088" category="list-text">La vista de la derecha muestra el total de casos abiertos en los últimos 3 meses a nivel de su compañía en función de su cuenta NSS de usuario.</block>
+  <block id="b19b168cc8a2b8c984465e140256b3a2" category="paragraph">Los resultados de la tabla reflejan los casos relacionados con la vista seleccionada.</block>
+  <block id="56dcadeee6b0e5c47a52673f9b5a0bb3" category="list-text">Puede agregar o quitar columnas de interés y filtrar el contenido de columnas como prioridad y estado. Otras columnas proporcionan funciones de clasificación.</block>
+  <block id="6f936762e1223311f031685422fcd3a4" category="paragraph">Consulte los pasos a continuación para obtener más información.</block>
+  <block id="b14929795a61440e9b4ec9f8a4885ae3" category="list-text">En el nivel por caso, ofrecemos la posibilidad de actualizar las notas de un caso o cerrar un caso que no esté ya en estado cerrado o pendiente de cierre.</block>
+  <block id="34b1296d31cefa72dae9b3a364b1f444" category="list-text">Haga clic en *Administración de casos* y si se le solicita, agregue su cuenta NSS a BlueXP.</block>
+  <block id="d8ce1865cf1fe3cffd60300b4b86ad63" category="paragraph">La página *Administración de casos* muestra casos abiertos relacionados con la cuenta NSS asociada con su cuenta de usuario de BlueXP. Esta es la misma cuenta NSS que aparece en la parte superior de la página *NSS Management*.</block>
+  <block id="2ae5ae78bdb2d222f15fd8e89248709c" category="list-text">Si lo desea, puede modificar la información que se muestra en la tabla:</block>
+  <block id="27635a52fe4c34c39ffc6430f4244ec6" category="list-text">En *casos de la organización*, haga clic en *Ver* para ver todos los casos asociados con su empresa.</block>
+  <block id="059e856250b59be3069246887b74a23c" category="list-text">Modifique el rango de fechas eligiendo un rango de fechas exacto o eligiendo un marco de tiempo diferente.</block>
+  <block id="dfb3764bce2548df4e06357403f9c7d0" category="inline-image-macro">Captura de pantalla de la opción situada encima de la tabla en la página de gestión de casos que permite elegir un intervalo de fechas exacto o los últimos 7 días, 30 días o 3 meses.</block>
+  <block id="7fcba8aeefa9960d3fc3fa08b360ba2e" category="paragraph"><block ref="7fcba8aeefa9960d3fc3fa08b360ba2e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1bb576be9e5a356290f231efb51b3f5" category="list-text">Filtre el contenido de las columnas.</block>
+  <block id="3753f10a59e21f58b30e3e67d416453e" category="inline-image-macro">Captura de pantalla de la opción de filtro de la columna Estado que permite filtrar casos que coinciden con un estado específico, como activo o cerrado.</block>
+  <block id="37709be3a43df07d5975287545d0ba12" category="paragraph"><block ref="37709be3a43df07d5975287545d0ba12" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1c6ea5ef583389e18e7d7bda70beaa71" category="inline-image-macro">El icono más que se muestra en la tabla</block>
+  <block id="1614dc8e47c0492434152c990d6c1040" category="list-text">Cambie las columnas que aparecen en la tabla haciendo clic en <block ref="effeab06130cddc8360822b2b706805b" category="inline-image-macro-rx" type="image"></block> y, a continuación, seleccione las columnas que desea mostrar.</block>
+  <block id="370b44009f1b82d0b6b178bb80cc62fa" category="inline-image-macro">Captura de pantalla que muestra las columnas que puede mostrar en la tabla.</block>
+  <block id="5de408d7cbad49634fb25f9047498132" category="paragraph"><block ref="5de408d7cbad49634fb25f9047498132" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ad0ae9ea1f2e8d973a9a0f6bb169f494" category="inline-image-macro">Icono con tres puntos que aparece en la última columna de la tabla</block>
+  <block id="98efef1c8a47ed5791b41944e8ff4ec2" category="list-text">Gestione un caso existente haciendo clic en <block ref="a0b152b50a56901a75affebabc26ed61" category="inline-image-macro-rx" type="image"></block> y seleccione una de las opciones disponibles:</block>
+  <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*Ver caso*: Ver todos los detalles sobre un caso específico.</block>
+  <block id="482429810c2b00a4fa04f9900c560232" category="list-text">*Actualizar notas de caso*: Proporcione detalles adicionales sobre su problema.</block>
+  <block id="f791bc685c526af8296381acff10f6a0" category="list-text">*Cerrar caso*: Proporcione detalles sobre por qué cierra el caso y haga clic en *Cerrar caso*.</block>
+  <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">Captura de pantalla que muestra las acciones que puede realizar después de seleccionar el menú de la última columna de la tabla.</block>
+  <block id="e9a5c374fb47ed2ae5cc6108fb36d829" category="paragraph"><block ref="e9a5c374fb47ed2ae5cc6108fb36d829" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3c6506a0407767fa4ee430c24f3b89e2" category="admonition">_Flash Cache_, alta velocidad de escritura y una unidad de transmisión máxima (MTU) más alta de 8,896 están disponibles a través de la opción *Alta velocidad de escritura con los tipos de instancia n2-standard-16, n2-standard-32, n2-standard-48 y n2-standard-64. Además, el MTU superior de 8,896 requiere la selección de VCP-1, VPC-2 o VCP-3 para la puesta en marcha. _Flash Cache_, alta velocidad de escritura y un MTU de 8,896 dependen de las funciones y no se pueden deshabilitar individualmente dentro de una instancia configurada.</block>
+  <block id="c616f204302ed58d4618e3ded77f1858" category="paragraph">Si utiliza una pareja de alta disponibilidad, Cloud Volumes ONTAP admite una alta velocidad de escritura con varios tipos de máquinas virtuales, a partir de la versión 9.13.0. Vaya a la<block ref="44033d1307c0997839bd6a3cb420c3fd" category="inline-link-rx"></block> Para ver los tipos de equipos virtuales que admiten una alta velocidad de escritura.</block>
+  <block id="436ea77bab9d72d8fe71dbccf1dd6613" category="list-text">Licencia de administración de claves de cifrado multi-tenant (MTEKM) instalada, a partir de Cloud Volumes ONTAP 9.12.1 GA.</block>
+  <block id="51f24173f2f6195b17c8e22458037f6c" category="summary">Verifique una firma de archivo de imagen de Google Cloud exportada a través de la herramienta Archivo de resumen de imágenes de Cloud Volumes ONTAP.</block>
+  <block id="f2381744b9c03db11d49cbcc38dd048d" category="doc">Compruebe las imágenes firmadas de Google Cloud</block>
+  <block id="019892a31385e7fb7670de88abfcf3cd" category="paragraph">Para verificar la imagen firmada de Google Cloud exportada, debe descargar el archivo de resumen de imágenes del NSS para validar el archivo disk.raw y el contenido del archivo de resumen.</block>
+  <block id="c81429443fac6104f46abd88cff6840a" category="section-title">Resumen del flujo de trabajo de verificación de imagen firmada</block>
+  <block id="89367ca4743c16d95c687430c6a0d9cc" category="paragraph">A continuación se ofrece una descripción general del proceso de flujo de trabajo de verificación de imágenes firmadas de Google Cloud.</block>
+  <block id="11253a7af5a989f0e3e2ee767386c743" category="list-text">Desde la<block ref="4af4717946461f54169780875a3b5a98" category="inline-link-rx"></block>, Descargue el archivo de Google Cloud que contiene los siguientes archivos:</block>
+  <block id="e197da4f69193c85d129866a2675f762" category="list-text">Resumen firmado (.sig)</block>
+  <block id="6763cb37e125279317bf8422431cb36a" category="list-text">Certificado que contiene la clave pública (.pem)</block>
+  <block id="41008194a87291660d5b8cbbcf4e901b" category="list-text">Cadena de certificados (.pem)</block>
+  <block id="20578512149c6e3b4e6524f4afc81315" category="inline-image-macro">Imagen que muestra la página NSS que contiene las descargas del archivo digest tar.gz</block>
+  <block id="956855c49a0e0c3b22aa13808aac916f" category="paragraph"><block ref="956855c49a0e0c3b22aa13808aac916f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="81b811e1bb7358a9bfbd1be493ad5e08" category="list-text">Descargue el archivo disk.raw convertido</block>
+  <block id="f4580c24dd557ee68edae3101b584307" category="list-text">Validar el certificado mediante la cadena de certificados</block>
+  <block id="c6843882530be14543f812c098985cdb" category="list-text">Validar el resumen firmado con el certificado que contiene la clave pública</block>
+  <block id="98774f82cdc945a9f4d0e57b8bc015ca" category="list-text">Descifre el resumen firmado con la clave pública para extraer el resumen del archivo de imagen</block>
+  <block id="aa709fc45e05f2a5e2dd888ef8a945d0" category="list-text">Cree un resumen del archivo disk.raw descargado</block>
+  <block id="997f5d3364a511663fd4bf677e6ccd0d" category="list-text">Compare el archivo de dos resúmenes para su validación</block>
+  <block id="80f2dd223bbef33f12a6f95c73d7f282" category="inline-image-macro">Imagen que muestra el proceso de verificación de firmas de imagen</block>
+  <block id="acd7963bcfab60ed9803b6ce962f013d" category="paragraph"><block ref="acd7963bcfab60ed9803b6ce962f013d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d0693e7bf28b7bbc94287cee0e4b0768" category="section-title">5 de marzo de 2023</block>
+  <block id="eed8585d0b45afc4676b1c89f6f22a9a" category="paragraph">Los siguientes cambios se introdujeron con la versión 3.9.27 del conector.</block>
+  <block id="e2c7f196cec5020e2b840087f6a8e068" category="section-title">Compatibilidad con 16 TIB y 32 Tib en Azure</block>
+  <block id="bfb9ab5387a727da709a7377d950cee0" category="paragraph">Cloud Volumes ONTAP ahora admite tamaños de disco de 16 TIB y 32 TIB para puestas en marcha de alta disponibilidad que se ejecutan en discos gestionados en Azure.</block>
+  <block id="8f9e72f80a7dd402a28a4b46aca286f9" category="inline-link">Tamaños de disco compatibles en Azure</block>
+  <block id="9bc26ebd17008cdc39569edf382f0b5e" category="paragraph">Más información acerca de<block ref="e55b1d7df019ac083c7ffec036e8de25" category="inline-link-rx"></block>.</block>
+  <block id="3cc0e97defd245de4dee36cae1e4c485" category="paragraph">La licencia de administración de claves de cifrado multi-tenant (MTEKM) ahora se incluye con sistemas Cloud Volumes ONTAP nuevos y existentes que ejecutan la versión 9.12.1 GA o posterior.</block>
+  <block id="bc912dd00b6301509fad22d6a376560d" category="paragraph"><block ref="532112271454bf057b0a2415bb119744" category="inline-link-rx"></block>.</block>
+  <block id="93616689ecb546d3ff1261cf76e33109" category="section-title">Soporte para entornos sin Internet </block>
+  <block id="28f5f7b773a8085f5db45145fb774c27" category="paragraph">Cloud Volumes ONTAP ahora es compatible con cualquier entorno de cloud que tenga un aislamiento completo de Internet. En estos entornos solo se admiten las licencias basadas en nodo (BYOL). No se admite la gestión de licencias basadas en capacidad. Para empezar, instale manualmente el software conector, inicie sesión en la consola BlueXP que se ejecuta en el conector, agregue su licencia BYOL a la cartera digital y, a continuación, implemente Cloud Volumes ONTAP. </block>
+  <block id="376a158ceb7d344fa563cce2aa16018f" category="inline-link">Instale el conector en una ubicación sin acceso a Internet</block>
+  <block id="6bfdfb1d6b845d41edac4f1eb0065216" category="list-text"><block ref="6bfdfb1d6b845d41edac4f1eb0065216" category="inline-link-rx"></block></block>
+  <block id="cbea6f8d2cd687c094438e0a7a38fedf" category="inline-link">Acceda a la consola BlueXP del conector</block>
+  <block id="b620510a7b9198825896459898b7bc08" category="list-text"><block ref="b620510a7b9198825896459898b7bc08" category="inline-link-rx"></block></block>
+  <block id="c09d91817b6017a3572898b867b22e36" category="inline-link">Añada una licencia sin asignar</block>
+  <block id="587a8286d2e3b61d9f250d807b34983c" category="list-text"><block ref="587a8286d2e3b61d9f250d807b34983c" category="inline-link-rx"></block></block>
+  <block id="44579e142f1f753a153dbb19dac8125c" category="summary">Compruebe el archivo disk.raw descargado de Google Cloud con el contenido del archivo de resumen utilizando OpenSSL.</block>
+  <block id="4768a2782def76fdf9b074232676aba9" category="doc">Verificación del archivo disk.raw y digiere el contenido de los archivos con OpenSSL</block>
+  <block id="9790936d7b09c3cf187b770347ee60d1" category="paragraph">Puede verificar el archivo disk.RAW descargado de Google Cloud con el contenido del archivo digest disponible en la<block ref="4af4717946461f54169780875a3b5a98" category="inline-link-rx"></block> Uso de OpenSSL.</block>
+  <block id="64bba92e74e274ead8d4e951ad8c9d3a" category="admonition">Los comandos OpenSSL para validar la imagen son compatibles con equipos Linux, Mac OS y Windows.</block>
+  <block id="c275ec11ecf674a6672183664681e98f" category="list-text">Verifique el certificado con OpenSSL.</block>
+  <block id="72d3302ad6fe92c7f4d817235e6ec413" category="list-text">Coloque el archivo disk.raw descargado, la firma y los certificados en un directorio.</block>
+  <block id="f059e79846663b1827b8520855050095" category="list-text">Extraiga la clave pública del certificado utilizando OpenSSL.</block>
+  <block id="1ce11a955fcab73f91ead73e47d4f374" category="list-text">Descifre la firma con la clave pública extraída y compruebe el contenido del archivo disk.raw descargado.</block>
+  <block id="edcfeb86d02d7df1eb2c480ac3913d8a" category="list-text">Administración de claves de cifrado multi-tenant (MTEKM), a partir de Cloud Volumes ONTAP 9.12.1 GA</block>
+  <block id="ec084bb25ed5b934c09b361069c246b2" category="list-text">La cuenta NSS debe ser una cuenta de nivel de cliente (no una cuenta de invitado o temporal). Puede tener varias cuentas de NSS en el nivel del cliente.</block>
+  <block id="27387009488fe78dcc7cb7e3e432792f" category="list-text">Sólo puede haber una cuenta NSS si esa cuenta es una cuenta de nivel de partner. Si intenta agregar cuentas de NSS de nivel de cliente y existe una cuenta de nivel de partner, obtendrá el siguiente mensaje de error:</block>
+  <block id="d926847e4634e19a1aa7358becc0fa27" category="paragraph">"El tipo de cliente NSS no está permitido para esta cuenta, ya que ya hay usuarios NSS de tipo diferente."</block>
+  <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">Lo mismo sucede si tiene cuentas de NSS de nivel de cliente preexistentes e intenta añadir una cuenta de nivel de partner.</block>
+  <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">Después de iniciar sesión correctamente, NetApp almacenará el nombre de usuario de NSS.</block>
+  <block id="452cd4df7b0d5eb1156519a2f3b0206b" category="paragraph">Se trata de un ID generado por el sistema que se asigna a su correo electrónico. En la página *NSS Management*, puede mostrar su correo electrónico desde <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> de windows</block>
+  <block id="fd02e84624a2fdfd58787131aa2820b5" category="list-text">Si alguna vez necesita actualizar sus tokens de credenciales de inicio de sesión, también hay una opción *Actualizar credenciales* en la <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> de windows</block>
+  <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">Con esta opción se le solicita que vuelva a iniciar sesión. Tenga en cuenta que el token de estas cuentas caduca después de 90 días. Se enviará una notificación para avisarle de ello.</block>
+  <block id="190ca4df9155a41a2f2d0d261c72ddc3" category="sidebar">Verificación de imágenes de Google Cloud Platform</block>
+  <block id="0bb4855e3aeb722a47c6f81b2c53c274" category="sidebar">Convertir imagen a formato RAW en GCP</block>
+  <block id="5cb40010f012896cbae43d59859ac520" category="sidebar">Verificación de la firma de la imagen</block>
+  <block id="734726fba5c0a704a6a780254a724e08" category="sidebar">Verifique las imágenes firmadas de GCP</block>
+  <block id="11bb059fb2906ae78eda04a864443447" category="sidebar">Verifique el contenido con OpenSSL</block>
 </blocks>

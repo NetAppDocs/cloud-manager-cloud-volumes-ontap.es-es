@@ -20,6 +20,41 @@ Las mejoras descritas en esta página son específicas de las funciones de BlueX
 
 
 
+== 5 de marzo de 2023
+
+Los siguientes cambios se introdujeron con la versión 3.9.27 del conector.
+
+
+
+=== Compatibilidad con 16 TIB y 32 Tib en Azure
+
+Cloud Volumes ONTAP ahora admite tamaños de disco de 16 TIB y 32 TIB para puestas en marcha de alta disponibilidad que se ejecutan en discos gestionados en Azure.
+
+Más información acerca de https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#supported-disk-sizes["Tamaños de disco compatibles en Azure"^].
+
+
+
+=== Licencia de MTEKM
+
+La licencia de administración de claves de cifrado multi-tenant (MTEKM) ahora se incluye con sistemas Cloud Volumes ONTAP nuevos y existentes que ejecutan la versión 9.12.1 GA o posterior.
+
+La gestión de claves externas multi-tenant permite que las máquinas virtuales de almacenamiento individuales (SVM) mantengan sus propias claves a través de un servidor KMIP al usar el cifrado de volúmenes de NetApp.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html["Aprenda a cifrar volúmenes con las soluciones de cifrado de NetApp"^].
+
+
+
+=== Soporte para entornos sin Internet 
+
+Cloud Volumes ONTAP ahora es compatible con cualquier entorno de cloud que tenga un aislamiento completo de Internet. En estos entornos solo se admiten las licencias basadas en nodo (BYOL). No se admite la gestión de licencias basadas en capacidad. Para empezar, instale manualmente el software conector, inicie sesión en la consola BlueXP que se ejecuta en el conector, agregue su licencia BYOL a la cartera digital y, a continuación, implemente Cloud Volumes ONTAP. 
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["Instale el conector en una ubicación sin acceso a Internet"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#access-the-local-ui["Acceda a la consola BlueXP del conector"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#manage-byol-licenses["Añada una licencia sin asignar"^]
+
+
+
+
 == 5 de febrero de 2023
 
 Los siguientes cambios se introdujeron con la versión 3.9.26 del conector.
