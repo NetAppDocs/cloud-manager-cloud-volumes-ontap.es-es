@@ -9,14 +9,14 @@
   <meta property="og:title" content="Inicio rápido de Cloud Volumes ONTAP en Google Cloud | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html" />
-	<meta property="og:description" content="Empiece a usar Cloud Volumes ONTAP para GCP en unos pasos." />
+	<meta property="og:description" content="Empiece a usar Cloud Volumes ONTAP para Google Cloud en unos pasos." />
   <meta property="og:image" content="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Empiece a usar Cloud Volumes ONTAP para GCP en unos pasos.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Empiece a usar Cloud Volumes ONTAP para Google Cloud en unos pasos.">
   <meta name="keywords" content=" google cloud platform, gcp, cloud manager, deploy BlueXP, launch BlueXP, create BlueXP, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions"><!-- Icons -->
   <link rel="icon" href="/es-es/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1859,7 +1859,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-20 14:40:27 +0000">02/20/2023</time>
+    <time datetime="2023-03-08 14:28:51 +0000">03/08/2023</time>
     
   
 
@@ -1870,14 +1870,14 @@
 </p>
 
 <div class="paragraph lead">
-<p>Empiece a usar Cloud Volumes ONTAP para GCP en unos pasos.</p>
+<p>Empiece a usar Cloud Volumes ONTAP para Google Cloud en unos pasos.</p>
 </div>
 <div class="paragraph quick-margin-para">
 <div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Uno"></span> Cree un conector</div>
-<p>Si usted no tiene un <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"Conector"</a> Sin embargo, un administrador de cuentas necesita crear uno. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html" target="_blank" rel="noopener">"Aprenda a crear un conector en GCP"</a>.</p>
+<p>Si usted no tiene un <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"Conector"</a> Sin embargo, un administrador de cuentas necesita crear uno. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html" target="_blank" rel="noopener">"Descubra cómo crear un conector en Google Cloud"</a></p>
 </div>
 <div class="paragraph quick-margin-para">
-<p>Al crear su primer entorno de trabajo de Cloud Volumes ONTAP, BlueXP (anteriormente Cloud Manager) le solicitará que implemente un conector si aún no lo tiene.</p>
+<p>Tenga en cuenta que si desea implementar Cloud Volumes ONTAP en una subred en la que no haya acceso a Internet disponible, deberá instalar manualmente el conector y acceder a la interfaz de usuario de BlueXP que se esté ejecutando en ese conector. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html" target="_blank" rel="noopener">"Aprenda a instalar manualmente el conector en una ubicación sin acceso a Internet"</a></p>
 </div>
 <div class="paragraph quick-margin-para">
 <div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Dos"></span> Planificación de la configuración</div>
@@ -1902,9 +1902,9 @@
 <p>Si está utilizando un VPC compartido, proporcione la función <em>Compute Network User</em> a la cuenta de servicio Connector.</p>
 </li>
 <li>
-<p>Habilite el acceso a Internet de salida desde el VPC de destino para que el conector y Cloud Volumes ONTAP puedan ponerse en contacto con varios extremos.</p>
+<p>Habilite el acceso a Internet de salida desde el VPC de destino para AutoSupport de NetApp.</p>
 <div class="paragraph">
-<p>Este paso es importante porque el conector no puede administrar Cloud Volumes ONTAP sin acceso saliente a Internet. Si necesita limitar la conectividad saliente, consulte la lista de puntos finales para <a href="reference-networking-gcp.html">"El conector y Cloud Volumes ONTAP"</a>.</p>
+<p>Este paso no es necesario si está instalando Cloud Volumes ONTAP en una ubicación en la que no hay acceso a Internet disponible.</p>
 </div>
 </li>
 </ol>
@@ -1959,7 +1959,7 @@
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html" target="_blank" rel="noopener">"Instalar el software del conector en un host Linux"</a></p>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html" target="_blank" rel="noopener">"Qué hace BlueXP con los permisos de GCP"</a></p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html" target="_blank" rel="noopener">"Qué hace BlueXP con los permisos de Google Cloud"</a></p>
 </li>
 </ul>
 </div>
