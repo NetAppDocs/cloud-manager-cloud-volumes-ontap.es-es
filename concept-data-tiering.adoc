@@ -96,10 +96,10 @@ BlueXP crea la cuenta de almacenamiento con los siguientes ajustes:
 
 
 --
-Niveles de acceso al almacenamiento:: El nivel de acceso al almacenamiento predeterminado para los datos por niveles en Azure es el nivel _hot_. El nivel activo es ideal para los datos a los que se accede con frecuencia.
+Niveles de acceso al almacenamiento:: El nivel de acceso al almacenamiento predeterminado para los datos por niveles en Azure es el nivel _hot_. El nivel activo es ideal para los datos a los que se accede con frecuencia en el nivel de capacidad.
 +
 --
-Si no tiene pensado acceder a los datos inactivos, puede reducir sus costes de almacenamiento cambiando al nivel de almacenamiento _COOL_. Cuando cambia el nivel de almacenamiento, los datos inactivos se inician en el nivel de almacenamiento activo y se pasan a la capa de almacenamiento frío, si no se accede a los datos después de 30 días.
+Si no piensa acceder a los datos inactivos del nivel de capacidad, puede reducir los costes de almacenamiento cambiando al nivel de almacenamiento _COOL_. Cuando cambia el nivel de almacenamiento a uno más frío, los datos del nivel de capacidad inactiva se mueven directamente al nivel de almacenamiento frío.
 
 Los costes de acceso son más elevados si accede a los datos, por lo que tenga en cuenta antes de cambiar el nivel de almacenamiento. https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers["Obtenga más información acerca de los niveles de acceso al almacenamiento de Azure Blob"^].
 
@@ -137,7 +137,7 @@ Cuando BlueXP crea el cucharón, utiliza los siguientes valores predeterminados:
 
 
 --
-Clases de almacenamiento:: La clase de almacenamiento predeterminada para los datos por niveles es la clase _Standard Storage_. Si se accede a los datos con poca frecuencia, puede reducir los costes de almacenamiento cambiando a _Nearline Storage_ o _Coldline Storage_. Al cambiar la clase de almacenamiento, los datos inactivos se inician en la clase de almacenamiento estándar y se pasan a la clase de almacenamiento seleccionada si no se accede a los datos después de 30 días.
+Clases de almacenamiento:: La clase de almacenamiento predeterminada para los datos por niveles es la clase _Standard Storage_. Si se accede a los datos con poca frecuencia, puede reducir los costes de almacenamiento cambiando a _Nearline Storage_ o _Coldline Storage_. Al cambiar la clase de almacenamiento, los datos inactivos se mueven directamente a la clase seleccionada.
 +
 --
 Los costes de acceso son más elevados si se accede a los datos, por lo que hay que tener en cuenta antes de cambiar la clase de almacenamiento. https://cloud.google.com/storage/docs/storage-classes["Obtenga más información sobre clases de almacenamiento para Google Cloud Storage"^].

@@ -137,7 +137,7 @@ Pague por capacidad por cualquier tipo de configuración de Cloud Volumes ONTAP 
 +
 Un solo nodo o ha con carga de capacidad para volúmenes principales y secundarios al mismo ritmo
 
-* Incluye backups ilimitados de volúmenes mediante Cloud Backup, pero solo para sistemas Cloud Volumes ONTAP implementados con el paquete profesional
+* Incluye backups de volúmenes ilimitados utilizando Cloud Backup, pero solo para sistemas Cloud Volumes ONTAP que usen el paquete Professional
 * Añada cualquiera de los servicios de datos en el cloud de NetApp por un coste adicional
 
 

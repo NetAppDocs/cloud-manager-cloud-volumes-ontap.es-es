@@ -41,6 +41,11 @@ El conector debe ponerse en marcha en la misma región de Azure que los sistemas
 . Haga clic en *Guardar*.
 
 
+.Después de terminar
+Si ha deshabilitado vínculos privados de Azure y el conector utiliza un servidor proxy, debe habilitar el tráfico API directo.
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector["Aprenda a activar el tráfico API directo en el conector"^]
+
 
 
 == Trabajar con Azure Private Links
