@@ -2123,7 +2123,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-20 14:40:27 +0000">02/20/2023</time>
+    <time datetime="2023-03-10 19:57:56 +0000">03/10/2023</time>
     
   
 
@@ -2160,7 +2160,7 @@
 <div class="sect2">
 <h3 id="versión-9-10-1-y-posterior">Versión 9.10.1 y posterior</h3>
 <div class="paragraph">
-<p>A partir de Cloud Volumes ONTAP 9.10.1, tiene la opción de habilitar o deshabilitar WORM en el nivel del volumen. La forma en la que elija habilitar WORM depende de sus necesidades.</p>
+<p>A partir de Cloud Volumes ONTAP 9.10.1, tiene la opción de habilitar o deshabilitar WORM en el nivel del volumen.</p>
 </div>
 <div class="paragraph">
 <p>Cuando crea un nuevo entorno de trabajo Cloud Volumes ONTAP, se le pedirá que habilite o deshabilite el almacenamiento WORM:</p>
@@ -2169,15 +2169,9 @@
 <ul>
 <li>
 <p>Si activa el almacenamiento WORM al crear un entorno de trabajo, todos los volúmenes que cree desde BlueXP tienen WORM activado. Pero puede usar System Manager o la CLI para crear volúmenes con WORM deshabilitado.</p>
-<div class="paragraph">
-<p>Esta opción es una buena opción si desea crear un sistema dedicado para almacenamiento WORM.</p>
-</div>
 </li>
 <li>
-<p>Si deshabilita el almacenamiento WORM al crear un entorno de trabajo, todos los volúmenes que cree desde BlueXP tienen WORM desactivado. Pero puede usar System Manager o CLI para crear volúmenes con WORM habilitado.</p>
-<div class="paragraph">
-<p>Esta opción es una buena opción si desea combinar distintos tipos de volúmenes en el mismo sistema.</p>
-</div>
+<p>Si deshabilita el almacenamiento WORM al crear un entorno de trabajo, todos los volúmenes que cree desde BlueXP, System Manager o CLI quedarán deshabilitados WORM. Si desea habilitar WORM en un entorno de trabajo de Cloud Volumes ONTAP que no se habilitó durante la creación, debe solicitar ayuda al cliente para abrir una incidencia de soporte con el soporte de NetApp.</p>
 </li>
 </ul>
 </div>
@@ -2188,7 +2182,7 @@
 <div class="sect2">
 <h3 id="versión-9-10-0-y-anteriores">Versión 9.10.0 y anteriores</h3>
 <div class="paragraph">
-<p>Puede activar el almacenamiento WORM en un sistema Cloud Volumes ONTAP cuando crea un nuevo entorno de trabajo. No puede activar el almacenamiento WORM en volúmenes individuales; es necesario activar WORM en el nivel del sistema. Sólo se puede activar cuando se crea el entorno de trabajo.</p>
+<p>Puede activar el almacenamiento WORM en un sistema Cloud Volumes ONTAP cuando crea un nuevo entorno de trabajo. Todos los volúmenes que cree desde BlueXP tienen WORM activado. No se puede deshabilitar el almacenamiento WORM en volúmenes individuales.</p>
 </div>
 </div>
 </div>
@@ -2211,7 +2205,7 @@
 <p>Si activa WORM al crear un entorno de trabajo de Cloud Volumes ONTAP, todos los volúmenes que cree desde BlueXP tienen WORM activado. Sin embargo, se puede usar la CLI o System Manager de ONTAP para crear volúmenes con WORM deshabilitado. Esos volúmenes no se cargan a la velocidad WORM</p>
 </li>
 <li>
-<p>Si no activa WORM al crear un entorno de trabajo, todos los volúmenes que cree desde BlueXP tienen WORM desactivado. No está cargado a la tasa WORM para esos volúmenes. Sin embargo, se puede usar la CLI o System Manager de ONTAP para crear volúmenes con LA función WORM habilitada. Esos volúmenes se cargarán a LA velocidad WORM.</p>
+<p>Si no activa WORM al crear un entorno de trabajo, todos los volúmenes que cree desde BlueXP tienen WORM desactivado. No está cargado a la tasa WORM para esos volúmenes.</p>
 </li>
 </ul>
 </div>
