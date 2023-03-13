@@ -4757,4 +4757,7 @@
   <block id="aa036f3aad369ff5710a7a7d5043dcbc" category="list-text">El nivel de acceso al almacenamiento predeterminado para los datos por niveles en Azure es el nivel _hot_. El nivel activo es ideal para los datos a los que se accede con frecuencia en el nivel de capacidad.</block>
   <block id="07524ae3949ffd6bf3d8864e62191d5c" category="paragraph">Si no piensa acceder a los datos inactivos del nivel de capacidad, puede reducir los costes de almacenamiento cambiando al nivel de almacenamiento _COOL_. Cuando cambia el nivel de almacenamiento a uno más frío, los datos del nivel de capacidad inactiva se mueven directamente al nivel de almacenamiento frío.</block>
   <block id="3e06c5fbfb4be981b82d7b6b33bb900f" category="list-text">La clase de almacenamiento predeterminada para los datos por niveles es la clase _Standard Storage_. Si se accede a los datos con poca frecuencia, puede reducir los costes de almacenamiento cambiando a _Nearline Storage_ o _Coldline Storage_. Al cambiar la clase de almacenamiento, los datos inactivos se mueven directamente a la clase seleccionada.</block>
+  <block id="5b420079bca1c870914caa221b31442e" category="section-title">Cloud Volumes ONTAP 9.13.0</block>
+  <block id="ad598f033e541927e862b0c5e17319ec" category="paragraph">BlueXP ahora puede poner en marcha y gestionar Cloud Volumes ONTAP 9.13.0 en AWS, Azure y Google Cloud.</block>
+  <block id="066405d152aeaf5c017e93048679ce43" category="paragraph"><block ref="0d69949c9de36f8752d49be7f0ec9aed" category="inline-link-rx"></block>.</block>
 </blocks>
